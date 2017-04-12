@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>Nombre de campaña</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="http://vuela.aeromexico.com/favicon.ico">
+</head>
+
+<body>
+    <div class="Aligner">
+        <header class="Aligner-item Aligner-item--top">
+            <div class="logo-container item-centered">
+                <img src="../images/14febrero_logoam1.png" alt="Aeromexico logo" class="responsive-image">
+            </div>
+        </header>
+        <div class="Aligner-item">
+            <div class="the-content the-content-big item-centered">
+                <img src="../images/14febrero_logo1.png" alt="Reconocimentos 14 de FEB" class="responsive-image">
+                <section class="avatar-content">
+                    <picture class="avatar">
+                        <img src="https://placeimg.com/480/480/people" alt="user">
+                    </picture>
+                    <h1>Hola <span>Nombre de usuario</span></h1>
+                </section>
+                <div class="row">
+                    <div class="col">
+                        <form id="registro">
+                            <div class="container-form">
+                                <div class="box--full">
+                                    <label> A quién quieres reconocer</label>
+                                    <input  id="name" name="name" type="text" 
+                                            placeholder="Escribe el nombre" 
+                                            required data-parsley-error-message="Juan, Ana, ¿a quién?">
+                                </div>
+                                <div class="box--half">
+                                    <label>Destino de salida</label>
+                                    <input  type="text" 
+                                            data-parsley-trigger="change" 
+                                            required=""
+                                            data-parsley-error-message="Por ejemplo Ciudad de México">
+                                </div>
+                                <div class="box--half">
+                                    <label>Destino de llegada</label>
+                                    <input  type="text" name="l_name" placeholder="Monterrey" 
+                                            required 
+                                            data-parsley-trigger="change" 
+                                            required="" 
+                                            data-parsley-error-message="Por ejemplo Tokio, Japón"> 
+                                </div>
+                                <div class="box--full">
+                                    <label>Tu mensaje</label>
+                                    <textarea   class="textarea" 
+                                                data-parsley-minlength="20" 
+                                                data-parsley-maxlength="100" 
+                                                data-parsley-error-message="Escribe un mensaje"
+                                                required="">
+                                    </textarea>
+                                </div>
+                                <input type="submit" class="btn-main item-centered" value="Crear">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="Aligner-item Aligner-item--bottom">
+            <p>&copy; 2017. <a href="https://aeromexico.com/es/viaja-con-aeromexico/preparando-tu-viaje/reglamentos-y-politicas/terminos-y-condiciones/?site=mx" target="_blank">Términos y condiciones</a> &#124; <a href="https://aeromexico.com/es/viaja-con-aeromexico/preparando-tu-viaje/reglamentos-y-politicas/aviso-de-privacidad/?site=mx" target="_blank">Aviso de privacidad</a>
+            </p>
+        </footer>
+    </div>
+</body>
+<!-- scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="js/parsley.min.js"></script>
+<script src="js/app.js"></script>
+<script type="text/javascript">
+
+  $('#registro').parsley();
+</script>
+</body>
+</html>

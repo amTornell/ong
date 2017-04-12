@@ -1,0 +1,298 @@
+body{
+	font-family: $font-base;
+    background: url(../../images/patron.jpg) repeat center center;
+    color: $white;
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1.46;
+}
+
+html {
+  height: 100%;
+}
+
+
+a{
+	text-decoration: none;
+	color: $blue-dark;
+	&:hover{
+		color: $acento;
+	}
+}
+.row{
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.responsive-image{
+	max-width: 100%;
+}
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+.text-centered{
+	text-align: center;
+}
+small{
+	font-size: 70%;
+}
+
+.item-centered{
+	display: block;
+	margin: 0 auto;
+	float: none;
+}
+
+.hide{
+	display: none;
+
+}
+
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  iframe, object, embed, video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/*****************************
+
+		TEXTOS
+
+******************************/
+
+.main-title{
+	margin: 10px 0;
+	text-align: center;
+	font-family: $font-thin;
+	span{
+		color: $acento;
+	}
+}
+
+.text-centered{
+	text-align: center;
+}
+
+p{
+	@include bp-small {
+      font-size: 13px;
+    }
+
+}
+
+h1{
+	font-size: 24px;
+	font-family: $font-medium;
+	@include bp-small {
+      font-size: 22px;
+    }
+}
+
+h2{
+	font-size: 21px;
+	font-family: $font-thin;
+	@include bp-small {
+      font-size: 15px;
+    }
+}
+
+h3{
+	font-size: 16px;
+	@include bp-small {
+      font-size: 14px;
+    }
+	
+}
+
+h4{
+	font-size: 18px;
+	@include bp-small {
+      font-size: 15px;
+    }
+}
+/*****************************
+
+		Modal
+******************************/
+
+.modal-content{
+	background: $blue-dark;
+	.modal-title{
+		text-align: center;
+	}
+	.modal-body{
+		font-size: 80%;
+	}
+}
+.modal-backdrop.in {
+//	opacity: 0.9;
+}
+.modal-terminos-txt{
+	ul{
+		padding-left: 25px;
+	}
+	p{
+		padding-bottom: 7px;
+		strong{
+			font-family: $font-medium;
+		}
+	}
+
+}
+/*****************************
+
+		Sponsors
+
+******************************/
+
+
+/*****************************
+
+		footer
+
+******************************/
+
+
+
+/*****************************
+
+		extras
+
+******************************/
+
+
+
+/* Preloader */
+#preloader {
+	position: relative;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	//background-color:#fff; /* change if the mask should be a color other than white */
+	z-index:99; /* makes sure it stays on top */
+	padding-top: 50px;
+}
+
+#status {
+	width:200px;
+	height:200px;
+	position:absolute;
+	left:50%; /* centers the loading animation horizontally on the screen */
+	top:50%; /* centers the loading animation vertically on the screen */
+	background-image:url(../../images/status.gif); /* path to your loading animation */
+	background-repeat:no-repeat;
+	background-position:center;
+	margin:-100px 0 0 -100px; /* is width and height divided by two */
+}
+
+.the-content, .the-content-big{
+	max-width: 500px;
+	background: green;
+	margin-top: 20px;
+	text-align: center;
+	padding: 0 20px;
+}
+
+.the-content-big{
+	max-width: 700px;
+	background: none;
+}
+
+
+
+/* ============================================================
+  SECTIONS
+============================================================ */
+section.module {
+  padding: 50px 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  h2 {
+    margin-bottom: 40px;
+    font-size: 30px;
+  }
+  p {
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: 300;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &.content {
+    padding: 40px 0;
+  }
+  &.parallax {
+    min-height: 400px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-bottom: 100px;
+    h1 {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 48px;
+      line-height: 600px;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+section.module {
+  &.parallax-1 {
+    background-image: url("../../images/1.jpg");
+  }
+  &.parallax-2 {
+    background-image: url("../../images/2.jpg");
+  }
+  &.parallax-3 {
+    background-image: url("../../images/3.jpg");
+  }
+  &.parallax-4 {
+    background-image: url("../../images/4.jpg");
+  }
+  &.parallax-5 {
+    background-image: url("../../images/5.jpg");
+  }
+}
+
+@media all and (min-width: 600px) {
+  section.module h2 {
+    font-size: 42px;
+  }
+  section.module p {
+    font-size: 20px;
+  }
+  section.module.parallax h1 {
+    font-size: 96px;
+  }
+}
+@media all and (min-width: 960px) {
+  section.module.parallax h1 {
+    font-size: 160px;
+  }
+}
+

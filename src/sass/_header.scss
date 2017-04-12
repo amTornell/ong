@@ -1,0 +1,21 @@
+
+/*****************
+	header
+
+******************/
+
+header{
+	width: 100%;
+	position: relative;
+	max-height: 80px;
+	background: $blue-dark;
+	text-align: center;
+	.logo-container{
+		max-width: 480px;
+		padding: 20px;
+	}
+	@include bp-small {
+		
+
+    }
+}
