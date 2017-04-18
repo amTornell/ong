@@ -1,6 +1,6 @@
 body{
 	font-family: $font-base;
-    background: url(../../images/patron.jpg) repeat center center;
+    background: url(../../images/Reservacion_patron.jpg) repeat center center;
     color: $white;
     height: 100%;
     min-height: 100%;
@@ -89,25 +89,26 @@ small{
 }
 
 p{
+  font-size: 13px;
 	@include bp-small {
-      font-size: 13px;
+      
     }
 
 }
 
 h1{
-	font-size: 24px;
+	font-size: 25px;
 	font-family: $font-medium;
 	@include bp-small {
-      font-size: 22px;
+      font-size: 16px;
     }
 }
 
 h2{
-	font-size: 21px;
+	font-size: 22px;
 	font-family: $font-thin;
 	@include bp-small {
-      font-size: 15px;
+      font-size: 18px;
     }
 }
 
@@ -123,7 +124,7 @@ h4{
 	font-size: 18px;
 	@include bp-small {
       font-size: 15px;
-    }
+  }
 }
 /*****************************
 
@@ -166,7 +167,12 @@ h4{
 		footer
 
 ******************************/
-
+footer {
+  padding: 30px 0;
+  p,  a{
+  color: $white;
+  }
+}
 
 
 /*****************************
@@ -224,14 +230,15 @@ section.module {
   &:last-child {
     margin-bottom: 0;
   }
-  h2 {
-    margin-bottom: 40px;
-    font-size: 30px;
+  h2{
+    margin-bottom: 30px;
+    @include bp-small {
+      margin-bottom: 15px;
+    }
   }
+
   p {
     margin-bottom: 40px;
-    font-size: 16px;
-    font-weight: 300;
     &:last-child {
       margin-bottom: 0;
     }
@@ -248,7 +255,7 @@ section.module {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     h1 {
       color: rgba(255, 255, 255, 0.8);
       font-size: 48px;
@@ -273,9 +280,18 @@ section.module {
   }
   &.parallax-4 {
     background-image: url("../../images/4.jpg");
+    p, h2, span{
+      color: $cafe;
+
+    }
+    input[type="submit"]{
+        color: $cafe;
+        border-color: $cafe;
+      }
   }
   &.parallax-5 {
     background-image: url("../../images/5.jpg");
+    margin-bottom: 0;
   }
 }
 
@@ -296,3 +312,39 @@ section.module {
   }
 }
 
+
+.navbar{
+  min-height: 40px;
+  margin: 0;
+}
+
+#nav{
+ // position: relative;
+  a{
+    color: $white;
+    text-decoration: underline;
+    font-size: 13px;
+    &:hover{
+      background:none;
+    }
+  }
+  li{
+     display: inline-block;
+  }
+  .navbar-inner{
+    max-width:690px;
+    margin: 0 auto;
+  }
+}
+
+.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #14284C;
+    z-index: 10;
+    .navbar-inner{
+      width: 100%;
+      margin: 0 !important;
+    }
+}

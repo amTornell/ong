@@ -18,6 +18,7 @@
     "gulp-uglify": "^2.0.0"
   },
   "dependencies": {
+    "moment": "^2.18.1",
     "parsleyjs": "^2.6.2"
   }
 }

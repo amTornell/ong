@@ -1,9 +1,10 @@
 .btn-main{
-    background-color:$blue-light;
+    background:none;
+    border: 1px solid $white;
     color: $white;
     min-width: 200px;
     padding: 15px;
-    letter-spacing: 5px;
+    letter-spacing: 1px;
     font-size: 12px;
     font-weight: 600;
     margin-top: 20px;
@@ -12,7 +13,6 @@
     text-transform: uppercase;
     cursor: pointer;
     display: inline-block;
-    
     span{
       border-right: 1px solid $white;
       padding-right: 4px;

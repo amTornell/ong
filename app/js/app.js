@@ -1,44 +1,123 @@
-
 (function() {
-	//**************      menu mobile    **************
-            // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
-                if (!String.prototype.trim) {
-                    (function() {
-                        // Make sure we trim BOM and NBSP
-                        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
-                        String.prototype.trim = function() {
-                            return this.replace(rtrim, '');
-                        };
-                    })();
-                }
+ //**************      menu mobile    **************
 
-                [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
-                    // in case the input is already filled..
-                    if( inputEl.value.trim() !== '' ) {
-                        classie.add( inputEl.parentNode, 'input--filled' );
-                    }
 
-                    // events:
-                    inputEl.addEventListener( 'focus', onInputFocus );
-                    inputEl.addEventListener( 'blur', onInputBlur );
-                } );
+ if ($('#trivia').length) {
+  //$('.trivia-instruction').modal('show');
+ }
 
-                function onInputFocus( ev ) {
-                    classie.add( ev.target.parentNode, 'input--filled' );
-                }
 
-                function onInputBlur( ev ) {
-                    if( ev.target.value.trim() === '' ) {
-                        classie.remove( ev.target.parentNode, 'input--filled' );
-                    }
-                }
+
+
+
+ /*
+ 30 segundos para contestar cada pregunta
+ */
+ function countdown() {
+
+ }
+
+
+ // spy and scroll menu boogey
+ $("#nav ul li a[href^='#']").on('click', function(e) {
+
+  // prevent default anchor click behavior
+  e.preventDefault()
+
+  // store hash
+  var hash = this.hash
+
+  // animate
+  $('html, body').animate({
+   scrollTop: $(this.hash).offset().top - 80
+  }, 800, function() {
+   window.location.hash = hash - 50
+  })
+
+ })
+
+ /******* select *******/
+
+ /*
+ Reference: http://jsfiddle.net/BB3JK/47/
+ */
+
+ $('select').each(function() {
+  var $this = $(this),
+   numberOfOptions = $(this).children('option').length;
+
+  $this.addClass('select-hidden');
+  $this.wrap('<div class="select"></div>');
+  $this.after('<div class="select-styled"></div>');
+
+  var $styledSelect = $this.next('div.select-styled');
+  $styledSelect.text($this.children('option').eq(0).text());
+
+  var $list = $('<ul />', {
+   'class': 'select-options'
+  }).insertAfter($styledSelect);
+
+  for (var i = 0; i < numberOfOptions; i++) {
+   $('<li />', {
+    text: $this.children('option').eq(i).text(),
+    rel: $this.children('option').eq(i).val()
+   }).appendTo($list);
+  }
+
+  var $listItems = $list.children('li');
+
+  $styledSelect.click(function(e) {
+   e.stopPropagation();
+   $('div.select-styled.active').not(this).each(function() {
+    $(this).removeClass('active').next('ul.select-options').hide();
+   });
+   $(this).toggleClass('active').next('ul.select-options').toggle();
+  });
+
+  $listItems.click(function(e) {
+   e.stopPropagation();
+   $styledSelect.text($(this).text()).removeClass('active');
+   $this.val($(this).attr('rel'));
+   $list.hide();
+  });
+
+  $(document).click(function() {
+   $styledSelect.removeClass('active');
+   $list.hide();
+  });
+
+ });
+ /******** select *******/
+
+ /******
+    
+ calendario
+ *******/
+ var $datepicker = $('.calendario').pikaday({
+  minDate: new Date(),
+  format : "MM/DD/YYYY",
+  maxDate: new Date(2018, 12, 31),
+  yearRange: [2017, 2018]
+ });
+
+ //$('.calendario').setMoment(moment().format('D MMM YYYY'));
+
+ // chain a few methods for the first datepicker, jQuery style!
+ //$datepicker.pikaday('show').pikaday('nextMonth');
+ $('body').scrollspy({
+  target: '#main-menu'
+ });
+ /*************
+ preloader
+ ************/
+
+
+ $(window).on('load', function() { // makes sure the whole site is loaded 
+
+ })
+
 
 })();
-
-
-
-
-
 (function() {
 
 	console.log("script app 2");

@@ -3,41 +3,50 @@
 <head>
     <meta charset="utf-8"><!-- utf-8 works for most cases -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <title>Nombre de campaña</title>
+    <title>Reservación para el cambio</title>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" type="image/x-icon" href="http://vuela.aeromexico.com/favicon.ico">
 </head>
-<body>
+<body data-spy="scroll" data-target="#main-menu">
     <header class="">
       <div class="logo-container item-centered">
-          <img src="../images/14febrero_logoam1.png" alt="Aeromexico logo" class="responsive-image">
+          <img src="../images/logoAM.png" alt="Aeromexico logo" class="responsive-image">
       </div>
     </header>
     <main>
-    <nav class="navbar navbar-default navbar-static-top">
-  <div class="container">
-    <ul>
-      <li><a href="">item</a></li>
-      <li><a href="">item</a></li>
-      <li><a href="">item</a></li>
-    </ul>
-  </div>
-</nav>
+
       <section class="module parallax parallax-1">
         <div class="container">
           <div class="row">
 
-            <img src="../images/Reservacion_logo.png" alt="Las buenas causas tienen lugar en nuestros aviones">
+            <img src="../images/Reservacion_logo.png" alt="Las buenas causas tienen lugar en nuestros aviones" class="responsive-image">
           </div>
+         
+        </div>
+        <div  data-spy="affix" data-offset-top="300" id="nav">
+              <div class="navbar">
+                  <div class="navbar-inner">
+                          <div id="main-menu">
+<!--                               <a class="brand" href="#">Home</a>
+ -->                               
+                                <ul class="nav">
+                                  <li class="active"><a href="#intro">Nuestro programa</a></li>
+                                  <li><a href="#organizaciones">Organizaciones beneficiadas</a></li>
+                                  <li><a href="#registro">Sé parte del programa</a></li>
+                                  <li><a href="#alta">Registra una ONG</a></li>
+                               </ul>
+                          </div>
+                  </div> 
+              </div> 
         </div>
       </section>
       <section class="module parallax parallax-2">
         <div class="container">
           <div class="col-md-12">
-            <h2>
+            <h2 id="intro">
             Las buenas causas tienen un lugar en nuestros aviones. 
             </h2>
             <p>
@@ -47,7 +56,20 @@
           
         </div>
       </section>
-      <section class="module parallax parallax-3">
+      <section id="organizaciones" class="module parallax parallax-3">
+        <div class="container">
+          <div class="col-md-12">
+            <h2 >
+              Organizaciones Beneficiadas
+            </h2>
+            <p>
+              Conoce las organizaciones que se han beneficiado con el programa "Reservación para el Cambio" de Aeroméxico.
+            </p>
+          </div>
+          
+        </div>
+      </section>
+      <section id="registro" class="module parallax parallax-4">
         <div class="container">
           <h2>
             Regístrate y sé parte de este programa.
@@ -58,9 +80,156 @@
               Cuando uno de nuestros vuelos, próximo a despegar, tenga asientos disponibles, 
               los activistas inscritos serán notificados para que aquien le interese reserve y viaje.
           </p>
+          <form id="registroViaje">
+            <fieldset>
+              <div class="col-sm-6">
+                <label>Nombre completo</label>
+                <input type="text" name="nombre" required="" placeholder="Nombre completo">
+              </div>
+              <div class="col-sm-6">
+                <label>Correo electrónico</label>
+                <input type="email" name="email" required="" placeholder="Correo electrónico">
+              </div>
+              <div class="col-sm-6">
+                <label>Teléfono</label>
+                <input type="tel" name="email" required="" placeholder="Teléfono">
+              </div>
+              <div class="col-sm-6">
+                <label>ong</label>
+                <select id="ong">
+                    <option value="hide">-- Elige tu ONG --</option>
+                      <option value="Reservation International">Reservation International</option>
+                      <option value="Casa de la amistad">Casa de la amistad</option>
+                      <option value="World Vision">World Vision</option>
+                </select>
+              </div>
+                <span class="col-sm-12">Posible destino de viaje</span>
+                <span class="col-sm-12"></span>
+              <div class="col-sm-6">
+                <label>Origen</label>
+                <select id="origen">
+                    <option value="hide">-- Origen --</option>
+                      <option value="mex">Ciudad de México (MEX)</option>
+                      <option value="GDL">Guadalajara (GDL)</option>
+                      <option value="MTY">Monterrey (MTY)</option>
+                      <option value="ACA">Acapulco (ACA)</option>
+                      <option value="AGU">Aguascalientes (AGU)</option>
+                      <option value="CPE">Campeche (CPE)</option>
+                      <option value="CUN">Cancún (CUN)</option>
+                      <option value="CUU">Chihuahua (CUU)</option>
+                      <option value="CME">Ciudad del Carmen (CME)</option>
+                      <option value="CJS">Ciudad Juárez (CJS)</option>
+                      <option value="CEN">Ciudad Obregón (CEN)</option>
+                      <option value="CZM">Cozumel (CZM)</option>
+                      <option value="CUL">Culiacán (CUL)</option>
+                      <option value="DGO">Durango (DGO)</option>
+                      <option value="HMO">Hermosillo (HMO)</option>
+                      <option value="HUX">Huatulco (HUX)</option>
+                      <option value="ZIH">Ixtapa Zihuatanejo (ZIH)</option>
+                      <option value="LAP">La Paz (LAP)</option>
+                      <option value="LZC">Lázaro Cárdenas (LZC)</option>
+                      <option value="BJX">León Bajío (BJX)</option>
+                      <option value="SJD">Los Cabos (SJD)</option>
+                      <option value="LMM">Los Mochis (LMM)</option>
+                      <option value="ZLO">Manzanillo (ZLO)</option>
+                      <option value="MAM">Matamoros (MAM)</option>
+                      <option value="MZT">Mazatlán (MZT)</option>
+                      <option value="MID">Mérida (MID)</option>
+                      <option value="MXL">Mexicali (MXL)</option>
+                      <option value="MTT">Minatitlán (MTT)</option>
+                      <option value="LOV">Monclova (LOV)</option>
+                      <option value="MLM">Morelia (MLM)</option>
+                      <option value="NLD">Nuevo Laredo (NLD)</option>
+                      <option value="OAX">Oaxaca (OAX)</option>
+                      <option value="PAZ">Poza Rica (PAZ)</option>
+                      <option value="PBC">Puebla (PBC)</option>
+                      <option value="PVR">Puerto Vallarta (PVR)</option>
+                      <option value="QRO">Querétaro (QRO)</option>
+                      <option value="REX">Reynosa (REX)</option>
+                      <option value="SLW">Saltillo (SLW)</option>
+                      <option value="SLP">San Luis Potosí (SLP)</option>
+                      <option value="TAM">Tampico (TAM)</option>
+                      <option value="TAP">Tapachula (TAP)</option>
+                      <option value="TIJ">Tijuana (TIJ)</option>
+                      <option value="TLC">Toluca (TLC)</option>
+                      <option value="TRC">Torreón (TRC)</option>
+                      <option value="TGZ">Tuxtla Gutiérrez (TGZ)</option>
+                      <option value="VER">Veracruz (VER)</option>
+                      <option value="VSA">Villahermosa (VSA)</option>
+                      <option value="ZCL">Zacatecas (ZCL)</option>
+                </select>
+              </div>
+              <div class="col-sm-6">
+                <label>Destino</label>
+                <select id="origen">
+                    <option value="hide">-- Destino --</option>
+                      <option value="mex">Ciudad de México (MEX)</option>
+                      <option value="GDL">Guadalajara (GDL)</option>
+                      <option value="MTY">Monterrey (MTY)</option>
+                      <option value="ACA">Acapulco (ACA)</option>
+                      <option value="AGU">Aguascalientes (AGU)</option>
+                      <option value="CPE">Campeche (CPE)</option>
+                      <option value="CUN">Cancún (CUN)</option>
+                      <option value="CUU">Chihuahua (CUU)</option>
+                      <option value="CME">Ciudad del Carmen (CME)</option>
+                      <option value="CJS">Ciudad Juárez (CJS)</option>
+                      <option value="CEN">Ciudad Obregón (CEN)</option>
+                      <option value="CZM">Cozumel (CZM)</option>
+                      <option value="CUL">Culiacán (CUL)</option>
+                      <option value="DGO">Durango (DGO)</option>
+                      <option value="HMO">Hermosillo (HMO)</option>
+                      <option value="HUX">Huatulco (HUX)</option>
+                      <option value="ZIH">Ixtapa Zihuatanejo (ZIH)</option>
+                      <option value="LAP">La Paz (LAP)</option>
+                      <option value="LZC">Lázaro Cárdenas (LZC)</option>
+                      <option value="BJX">León Bajío (BJX)</option>
+                      <option value="SJD">Los Cabos (SJD)</option>
+                      <option value="LMM">Los Mochis (LMM)</option>
+                      <option value="ZLO">Manzanillo (ZLO)</option>
+                      <option value="MAM">Matamoros (MAM)</option>
+                      <option value="MZT">Mazatlán (MZT)</option>
+                      <option value="MID">Mérida (MID)</option>
+                      <option value="MXL">Mexicali (MXL)</option>
+                      <option value="MTT">Minatitlán (MTT)</option>
+                      <option value="LOV">Monclova (LOV)</option>
+                      <option value="MLM">Morelia (MLM)</option>
+                      <option value="NLD">Nuevo Laredo (NLD)</option>
+                      <option value="OAX">Oaxaca (OAX)</option>
+                      <option value="PAZ">Poza Rica (PAZ)</option>
+                      <option value="PBC">Puebla (PBC)</option>
+                      <option value="PVR">Puerto Vallarta (PVR)</option>
+                      <option value="QRO">Querétaro (QRO)</option>
+                      <option value="REX">Reynosa (REX)</option>
+                      <option value="SLW">Saltillo (SLW)</option>
+                      <option value="SLP">San Luis Potosí (SLP)</option>
+                      <option value="TAM">Tampico (TAM)</option>
+                      <option value="TAP">Tapachula (TAP)</option>
+                      <option value="TIJ">Tijuana (TIJ)</option>
+                      <option value="TLC">Toluca (TLC)</option>
+                      <option value="TRC">Torreón (TRC)</option>
+                      <option value="TGZ">Tuxtla Gutiérrez (TGZ)</option>
+                      <option value="VER">Veracruz (VER)</option>
+                      <option value="VSA">Villahermosa (VSA)</option>
+                      <option value="ZCL">Zacatecas (ZCL)</option>
+                </select>
+              </div>
+
+              <div class="col-sm-6">
+                <label>Fecha de salida</label>
+                <input type="text" name="fecha_salida" required="" placeholder="Fecha de salida" class="calendario">
+              </div>
+              <div class="col-sm-6">
+                <label>Fecha de regreso</label>
+                <input type="text" name="fecha_regreso" required="" placeholder="Fecha de regreso" class="calendario">
+              </div>
+              <p class="text-centered">
+                <input type="submit" value="Enviar" class="btn-main">
+              </p>
+            </fieldset>
+          </form>
         </div>
       </section>
-      <section class="module parallax parallax-4">
+      <section id="alta" class="module parallax parallax-5">
         <div class="container">
           <h2>
             Registra una ONG
@@ -68,43 +237,112 @@
           <p>
           Puedes dar de alta a la organización a la que perteneces para que sea evaluada y si es elegible será registrada para que sus activistas puedan obtener los beneficios del programa
           </p>
-          <form>
+          <form id="registroONG">
             <fieldset>
               <div class="col-sm-6">
-                <span class="input input--akira">
-                  <input class="input__field input__field--akira" id="input-22" type="text">
-                  <label class="input__label input__label--akira" for="input-22">
-                    <span class="input__label-content input__label-content--akira">First Name</span>
-                  </label>
-                </span>
+                <label>Nombre</label>
+                <input type="email" name="nombre_ong" placeholder="Nombre de ONG">
               </div>
               <div class="col-sm-6">
                 <label>Email</label>
-                <input type="email" name="email_loadong">
+                <input type="email" name="email_loadong" placeholder="Email">
               </div>
               <div class="col-sm-6">
                 <label>Tel</label>
-                <input type="tel" name="tel_loadong">
+                <input type="tel" name="tel_loadong" placeholder="Teléfono">
               </div>
               <div class="col-sm-6">
                 <label>Ciudad Sede</label>
-                <input type="text" name="sede_loadong">
+                <select id="origen">
+                    <option value="hide">-- Ciudad Sede --</option>
+                      <option value="mex">Ciudad de México (MEX)</option>
+                      <option value="GDL">Guadalajara (GDL)</option>
+                      <option value="MTY">Monterrey (MTY)</option>
+                      <option value="ACA">Acapulco (ACA)</option>
+                      <option value="AGU">Aguascalientes (AGU)</option>
+                      <option value="CPE">Campeche (CPE)</option>
+                      <option value="CUN">Cancún (CUN)</option>
+                      <option value="CUU">Chihuahua (CUU)</option>
+                      <option value="CME">Ciudad del Carmen (CME)</option>
+                      <option value="CJS">Ciudad Juárez (CJS)</option>
+                      <option value="CEN">Ciudad Obregón (CEN)</option>
+                      <option value="CZM">Cozumel (CZM)</option>
+                      <option value="CUL">Culiacán (CUL)</option>
+                      <option value="DGO">Durango (DGO)</option>
+                      <option value="HMO">Hermosillo (HMO)</option>
+                      <option value="HUX">Huatulco (HUX)</option>
+                      <option value="ZIH">Ixtapa Zihuatanejo (ZIH)</option>
+                      <option value="LAP">La Paz (LAP)</option>
+                      <option value="LZC">Lázaro Cárdenas (LZC)</option>
+                      <option value="BJX">León Bajío (BJX)</option>
+                      <option value="SJD">Los Cabos (SJD)</option>
+                      <option value="LMM">Los Mochis (LMM)</option>
+                      <option value="ZLO">Manzanillo (ZLO)</option>
+                      <option value="MAM">Matamoros (MAM)</option>
+                      <option value="MZT">Mazatlán (MZT)</option>
+                      <option value="MID">Mérida (MID)</option>
+                      <option value="MXL">Mexicali (MXL)</option>
+                      <option value="MTT">Minatitlán (MTT)</option>
+                      <option value="LOV">Monclova (LOV)</option>
+                      <option value="MLM">Morelia (MLM)</option>
+                      <option value="NLD">Nuevo Laredo (NLD)</option>
+                      <option value="OAX">Oaxaca (OAX)</option>
+                      <option value="PAZ">Poza Rica (PAZ)</option>
+                      <option value="PBC">Puebla (PBC)</option>
+                      <option value="PVR">Puerto Vallarta (PVR)</option>
+                      <option value="QRO">Querétaro (QRO)</option>
+                      <option value="REX">Reynosa (REX)</option>
+                      <option value="SLW">Saltillo (SLW)</option>
+                      <option value="SLP">San Luis Potosí (SLP)</option>
+                      <option value="TAM">Tampico (TAM)</option>
+                      <option value="TAP">Tapachula (TAP)</option>
+                      <option value="TIJ">Tijuana (TIJ)</option>
+                      <option value="TLC">Toluca (TLC)</option>
+                      <option value="TRC">Torreón (TRC)</option>
+                      <option value="TGZ">Tuxtla Gutiérrez (TGZ)</option>
+                      <option value="VER">Veracruz (VER)</option>
+                      <option value="VSA">Villahermosa (VSA)</option>
+                      <option value="ZCL">Zacatecas (ZCL)</option>
+                </select>
               </div>
+              <div class="col-sm-12">
+                <label>Dirección</label>
+                <input type="text" name="direccion_ong" placeholder="Dirección">
+              </div>
+              <div class="col-sm-12">
+                <label>Actividad Primaria</label>
+                <input type="text" name="direccion_ong" placeholder="Actividad Primaria">
+              </div>
+              <div class="col-sm-12">
+                <label>Nombre de contacto</label>
+                <input type="text" name="direccion_ong" placeholder="Nombre de contacto de la ONG">
+              </div>
+              <div class="col-sm-12">
+                <label>Más información</label>
+                <textarea placeholder="Más información"></textarea>
+              </div>
+              <p class="text-centered">
+                <input type="submit" value="Registrar ONG" class="btn-main">
+              </p>
             </fieldset>
           </form>
+          <footer class="">
+              <p class="text-centered"><small>&copy; 2017. <a href="https://world.aeromexico.com/es/viaja-con-aeromexico/preparando-tu-viaje/reglamentos-y-politicas/terminos-y-condiciones/?site=mx" target="_blank">Términos y condiciones</a> &#124; <a href="https://world.aeromexico.com/es/viaja-con-aeromexico/preparando-tu-viaje/reglamentos-y-politicas/aviso-de-privacidad/?site=mx" target="_blank">Aviso de privacidad</a></small></p>
+          </footer>
         </div>
       </section>
 
 
     </main>
-    <footer class="Aligner-item Aligner-item--bottom">
-      <p>&copy; 2017. <a href="https://aeromexico.com/es/viaja-con-aeromexico/preparando-tu-viaje/reglamentos-y-politicas/terminos-y-condiciones/?site=mx" target="_blank">Términos y condiciones</a> &#124; <a href="https://aeromexico.com/es/viaja-con-aeromexico/preparando-tu-viaje/reglamentos-y-politicas/aviso-de-privacidad/?site=mx" target="_blank">Aviso de privacidad</a></p>
-    </footer>
+    
 </body>
   <!-- scripts -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-  <script type="text/javascript" src="js/classie.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/moment.min.js"></script>
+  <script type="text/javascript" src="js/pikaday.js"></script>
+  <script type="text/javascript" src="js/pikaday.jquery.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
