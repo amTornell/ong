@@ -141,7 +141,7 @@ input:focus {
   display: inline-block;
   position: relative;
   font-size: 16px;
-  margin: 3px 0;
+  margin: 8px 0;
   border: 2px solid $grey;
   color: $select-color;
   width: $select-width;
@@ -154,7 +154,7 @@ input:focus {
   bottom: 0;
   left: 0;
   background-color: $select-background;
-  padding: 8px 15px;
+  padding: 9px 15px;
   @include transition(all 0.2s ease-in);
   &:after {
     content:"";

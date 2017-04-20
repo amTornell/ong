@@ -1,6 +1,6 @@
 body{
 	font-family: $font-base;
-    background: url(../../images/Reservacion_patron.jpg) repeat center center;
+    background: url(../images/Reservacion_patron.jpg) repeat center center;
     color: $white;
     height: 100%;
     min-height: 100%;
@@ -201,7 +201,7 @@ footer {
 	position:absolute;
 	left:50%; /* centers the loading animation horizontally on the screen */
 	top:50%; /* centers the loading animation vertically on the screen */
-	background-image:url(../../images/status.gif); /* path to your loading animation */
+	background-image:url(../images/status.gif); /* path to your loading animation */
 	background-repeat:no-repeat;
 	background-position:center;
 	margin:-100px 0 0 -100px; /* is width and height divided by two */
@@ -256,6 +256,10 @@ section.module {
     -o-background-size: cover;
     background-size: cover;
     margin-bottom: 60px;
+    @include bp-small {
+      min-height: 100px;
+      margin-bottom: 0;
+    }
     h1 {
       color: rgba(255, 255, 255, 0.8);
       font-size: 48px;
@@ -270,16 +274,16 @@ section.module {
 
 section.module {
   &.parallax-1 {
-    background-image: url("../../images/1.jpg");
+    background-image: url("../images/1.jpg");
   }
   &.parallax-2 {
-    background-image: url("../../images/2.jpg");
+    background-image: url("../images/2.jpg");
   }
   &.parallax-3 {
-    background-image: url("../../images/3.jpg");
+    background-image: url("../images/3.jpg");
   }
   &.parallax-4 {
-    background-image: url("../../images/4.jpg");
+    background-image: url("../images/4.jpg");
     p, h2, span{
       color: $cafe;
 
@@ -290,7 +294,7 @@ section.module {
       }
   }
   &.parallax-5 {
-    background-image: url("../../images/5.jpg");
+    background-image: url("../images/5.jpg");
     margin-bottom: 0;
   }
 }
@@ -318,12 +322,24 @@ section.module {
   margin: 0;
 }
 
-#nav{
+#main-menu{
+  width: 100%;
+}
+.navbar-inner{
  // position: relative;
+  .nav{
+    .active{
+      background: $blue-light;
+    }
+  }
+  ul{
+    max-width:720px;
+    margin: 0 auto;
+  } 
   a{
     color: $white;
     text-decoration: underline;
-    font-size: 13px;
+    font-size: 15px;
     &:hover{
       background:none;
     }
@@ -331,20 +347,47 @@ section.module {
   li{
      display: inline-block;
   }
-  .navbar-inner{
-    max-width:690px;
-    margin: 0 auto;
-  }
 }
 
+.brand{
+  display: none;
+}
 .affix {
     position: fixed;
     top: 0;
     width: 100%;
     background: #14284C;
     z-index: 10;
+    .brand{
+      display: inline;
+      svg{
+        fill: $white;
+        width: 40px;
+        height: auto;
+        float: left;
+        margin: 5px;
+      }
+      @include bp-small {
+        display: block;
+        float: none;
+        clear: both;
+        svg{
+          float: none;
+        }
+      }
+    }
+
     .navbar-inner{
       width: 100%;
       margin: 0 !important;
+      @include bp-small {
+       .nav{
+        display: block;
+        li{
+          font-size: 13px;
+        }
+       }
+      }
     }
+    
 }
